@@ -1,12 +1,21 @@
 project(svo_ros)
 cmake_minimum_required(VERSION 2.8.3)
 
+set(CMAKE_CXX_STANDARD 14)
+
+ADD_DEFINITIONS(
+    -std=c++14
+    # -O3
+)
+
+
 find_package(catkin_simple REQUIRED)
 find_package(rostest REQUIRED)
 catkin_simple()
-find_package(OpenCV 3 REQUIRED)
+find_package(OpenCV REQUIRED)
 
 include(SvoSetup)
+
 
 set(USE_GTSAM false)
 

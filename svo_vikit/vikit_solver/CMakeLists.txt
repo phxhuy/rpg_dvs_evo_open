@@ -4,7 +4,7 @@ find_package(catkin_simple REQUIRED)
 catkin_simple(ALL_DEPS_REQUIRED)
 
 SET(CMAKE_BUILD_TYPE Release) # Release, RelWithDebInfo
-SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -std=c++11")
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -std=c++14")
 
 #############
 # LIBRARIES #

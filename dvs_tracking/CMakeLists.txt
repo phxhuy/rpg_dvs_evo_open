@@ -21,6 +21,10 @@ SET(CMAKE_BUILD_TYPE RelWithDebInfo) # Release, RelWithDebInfo)
 ADD_DEFINITIONS(
     -Wno-ignored-qualifiers
 )
+ADD_DEFINITIONS(
+    -std=c++14
+    # -O3
+)
 
 SET(CMAKE_CXX_FLAGS "-pthread")
 SET(CMAKE_CXX_FLAGS "-D_LINUX -D_REENTRANT -march=native -Wno-unused-variable -Wno-unused-but-set-variable")
@@ -33,7 +37,7 @@ ENDIF()
 IF(CMAKE_COMPILER_IS_GNUCC)
   SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x")
 ELSE()
-  SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+  SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
 ENDIF()
 
 SET(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS} -O3 -fsee -fomit-frame-pointer -fno-signed-zeros -fno-math-errno -funroll-loops")

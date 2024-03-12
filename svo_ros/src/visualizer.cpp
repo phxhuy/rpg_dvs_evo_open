@@ -243,7 +243,7 @@ void Visualizer::publishImages(
     else if (images[i].type() == CV_8UC3)
     {
       cv::Mat gray_image;
-      cv::cvtColor(images[i], gray_image, CV_BGR2GRAY);
+      cv::cvtColor(images[i], gray_image, cv::COLOR_BGR2GRAY);
       frame_utils::createImgPyramid(gray_image, img_pub_level_+1, img_pyr);
     }
     else

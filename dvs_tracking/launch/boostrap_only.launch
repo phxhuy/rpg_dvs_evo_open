@@ -1,0 +1,70 @@
+<launch>
+    <arg name="auto_trigger" default="true"/>
+
+    <arg name="camera_name" default="DAVIS-evo" />
+    <arg name="bootstrap_image_topic" default="/events/image_raw" />
+    <arg name="events_topic" default="/dvs/events" />
+
+    <param name="camera_name" value="$(arg camera_name)" />
+    <param name="calib_file" value="$(find dvs_tracking)/parameters/calib/$(arg camera_name).yaml" />
+
+    <remap from="events" to="$(arg events_topic)" />
+    <remap from="remote_key" to="/evo/remote_key" />
+
+    <param name="world_frame_id" value="/world"/>
+    <param name="dvs_bootstrap_frame_id" value="/camera_0" />
+    <param name="dvs_frame_id" value="/dvs_evo" />
+
+    <!-- <remap from="camera_info" to="/dvs/camera_info" /> -->
+
+    <param name="min_depth" value="0.4" />
+    <param name="max_depth" value="5" />
+    <param name="num_depth_cells" value="100" />
+    
+    <!-- Angle of view of the DSI (cone) -->
+    <param name="fov_virtual_camera_deg" value="80.0" />
+    
+    <!-- Number of horizontal/vertical pixels in the DSI -->
+    <param name="virtual_width" value="240" />
+    <param name="virtual_height" value="180" />
+
+
+    <!-- Bootstrapping -->
+    <!-- <node name="dvs_bootstrapping" pkg="dvs_bootstrapping" type="dvs_bootstrapping_frontoplanar_ros" output="screen">
+        <param name="plane_distance" value="1"/>
+        <remap from="pointcloud" to="dvs_mapping/pointcloud" />
+        <param name="one_shot" value="true" />
+        <param name="radius_search" value="0.1" />
+        <param name="min_num_neighbors" value="50" /> -->
+    <node name="dvs_bootstrapping" pkg="dvs_bootstrapping" type="dvs_bootstrapping_ef_ros" output="screen">
+        <param name="rate_hz" value="30" />
+        
+        <param name="frame_size" value="15000" />
+        <param name="local_frame_size" value="5000"/>
+        <!-- <param name="frame_size" value="20000" />
+        <param name="local_frame_size" value="7500"/> -->
+        <param name="min_step_size" value="15000"/>
+        <param name="events_offset" value="0"/>
+        <param name="events_scale_factor" value="4.0" />
+        <param name="motion_corrected_topic" value="/events/image_raw"/>
+        <param name="optical_flow_topic" value="/evo/bootstrap/optical_flow"/>
+        
+        <param name="enable_visualizations" value="true"/>
+        <param name="unwarp_estimate_n_it" value="75"/>
+        <param name="unwarp_estimate_eps" value="0.0001"/>
+        <param name="unwarp_estimate_pyramid_lvls" value="2"/>
+
+        <param name="median_filtering" value="false"/>
+        <param name="median_filter_size" value="1" />
+        <param name="adaptive_thresholding" value="true"/>
+        <param name="activation_threshold_patch_size" value="13"/>
+        <param name="activation_threshold_min" value="10"/>
+
+        <param name="auto_trigger" value="true"/>
+    </node>
+
+    
+</launch>
+
+
+

@@ -15,7 +15,7 @@ include_directories(${PCL_INCLUDE_DIRS})
 
 SET(CMAKE_BUILD_TYPE RelWithDebInfo) # Release, RelWithDebInfo
 ADD_DEFINITIONS(
-    -std=c++11
+    -std=c++14
     -Wno-ignored-qualifiers
     -w
 )

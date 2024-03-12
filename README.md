@@ -1,5 +1,12 @@
 # EVO: Event based Visual Odometry
 
+
+Note: this forked version has been modified and tested to work with ROS 1 Noetic on a Linux Ubuntu 20.04 computer.
+- OS: Linux Ubuntu 20.04
+- ROS: version 1, Noetic
+- System: AMD
+
+
 [![EVO: Event based Visual Odometry](images/preview-yt.png)](https://www.youtube.com/watch?v=bYqD2qZJlxE)
 
 <a name="license"></a>
