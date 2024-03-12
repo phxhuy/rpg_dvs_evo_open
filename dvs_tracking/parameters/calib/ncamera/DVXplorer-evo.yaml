@@ -1,0 +1,48 @@
+cameras:
+  - camera:
+      distortion:
+        parameters:
+          cols: 1
+          rows: 4
+          data: [0.0, 0.0, 0.0, 0.0] #[-0.3687369041657594, 0.1635331561185621, 0.0006758841262625439, -0.0014358423311193668, 0.0]
+        type: radial-tangential
+      image_height: 180
+      image_width: 240
+      intrinsics:
+        cols: 1
+        rows: 4
+        data:
+          [
+            684.38064063351692,
+            683.53504408690924,
+            323.65129675746670,
+            240.44229828961969,
+          ]
+      label: cam0
+      line-delay-nanoseconds: 0
+      type: pinhole
+    T_B_C:
+      cols: 4
+      rows: 4
+      data:
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+        ]
+    serial_no: DVXplorer-evo
+    calib_date: 21/05/2021
+label: DVXplorer-evo

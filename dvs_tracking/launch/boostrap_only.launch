@@ -1,7 +1,8 @@
 <launch>
     <arg name="auto_trigger" default="true"/>
 
-    <arg name="camera_name" default="DAVIS-evo" />
+    <!-- <arg name="camera_name" default="DAVIS-evo" /> -->
+    <arg name="camera_name" default="DVXplorer-evo" />
     <arg name="bootstrap_image_topic" default="/events/image_raw" />
     <arg name="events_topic" default="/dvs/events" />
 
