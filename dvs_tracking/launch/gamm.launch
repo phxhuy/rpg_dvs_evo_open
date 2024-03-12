@@ -13,7 +13,7 @@
 
     <param name="world_frame_id" value="/world"/>
     <param name="dvs_bootstrap_frame_id" value="/camera_0" />
-    <param name="dvs_frame_id" value="/dvs_evo" />
+    <param name="dvs_frame_id" value="dvs_evo" />
 
     <!-- <remap from="camera_info" to="/dvs/camera_info" /> -->
 
@@ -25,8 +25,8 @@
     <param name="fov_virtual_camera_deg" value="80.0" />
     
     <!-- Number of horizontal/vertical pixels in the DSI -->
-    <param name="virtual_width" value="240" />
-    <param name="virtual_height" value="180" />
+    <param name="virtual_width" value="640" />
+    <param name="virtual_height" value="480" />
 
     <!-- SVO -->
     <node pkg="svo_ros" type="svo_node" name="svo" clear_params="true" output="screen" >
@@ -71,7 +71,7 @@
         <remap from="remote_key" to="evo/remote_key" />
         <remap from="pointcloud" to="dvs_mapping/pointcloud" />
 
-        <param name="visibility_threshold" value="0.9" />
+        <param name="visibility_threshold" value="0.2" />
         <param name="coverage_threshold" value="0.4" />
         <param name="baseline_threshold" value="0.1" />
         <param name="rate" value="3" />
@@ -87,9 +87,9 @@
         <param name="weight_scale"   value="1." />
         <param name="map_blur"          value="3" />
         <param name="noise_rate"        value="10000" />
-        <param name="frame_size"       value="5000" />
-        <param name="step_size"        value="10000" />
-        <param name="max_event_rate" value="4000000" />
+        <param name="frame_size"       value="50000" />
+        <param name="step_size"        value="100000" />
+        <param name="max_event_rate" value="40000000" />
         <param name="pose_mean_filter_size"    value="5" />
         <param name="events_per_kf"  value="100000" />
         <param name="event_map_overlap_rate" value="15" />

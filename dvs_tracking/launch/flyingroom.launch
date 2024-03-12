@@ -13,7 +13,7 @@
 
     <param name="world_frame_id" value="/world"/>
     <param name="dvs_bootstrap_frame_id" value="/camera_0" />
-    <param name="dvs_frame_id" value="/dvs_evo" />
+    <param name="dvs_frame_id" value="dvs_evo" />
 
     <!-- <remap from="camera_info" to="/dvs/camera_info" /> -->
 
